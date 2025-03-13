@@ -111,11 +111,12 @@
     @media (max-width: 768px) {
       .navbar {
           padding: 10px 0;
-          height: auto; /* Permite extinderea navbar-ului când se deschide meniul */
+          min-height: 70px; /* Asigurăm că bara nu devine mai subțire decât 70px */
+          height: auto;     /* Permite extinderea când meniul se deschide */
           position: relative;
       }
       
-      /* Fixăm brandul în partea superioară (nu se mișcă odată cu extinderea meniului) */
+      /* Fixăm brandul în partea superioară astfel încât nu se mișcă odată cu extinderea meniului */
       .navbar-brand {
           position: absolute;
           top: 0;
@@ -133,7 +134,7 @@
           z-index: 15;
       }
       
-      /* Facem ca dropdown-ul să fie parte a fluxului normal (nu absolut), astfel încât extinderea lui va împinge conținutul (hero section) în jos */
+      /* Dropdown-ul face parte din fluxul normal, deci extinderea lui împinge tot conținutul în jos */
       .navbar-collapse {
           position: static;
           background: linear-gradient(90deg, #0073e6, #003d80);
