@@ -77,7 +77,6 @@
       text-align: center;
       overflow: hidden;
       z-index: 1;
-      /* Inițial, margin-top-ul este 0 */
       margin-top: 0;
       transition: margin-top 0.3s ease-in-out;
     }
@@ -200,31 +199,31 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
-  <!-- Script pentru efectul de fade-in la încărcarea Hero Section și ajustarea margin-top când meniul dropdown e deschis -->
+  <!-- Script pentru fade-in la încărcarea Hero Section și ajustarea margin-top concomitent cu animația dropdown -->
   <script>
     window.addEventListener('load', function() {
-      // Fade-in pentru containerul din hero section
+      // Fade-in pentru containerul din secțiunea hero
       const heroContainer = document.querySelector('.hero-section .container');
       if (heroContainer) {
         heroContainer.classList.add('visible');
       }
       
-      // Obținem elementul collapse și hero section
+      // Obținem elementele collapse și hero section
       const navbarCollapse = document.getElementById('navbarNav');
       const heroSection = document.querySelector('.hero-section');
 
-      // Dacă sunt prezente (pe mobil, meniul este activ)
       if (navbarCollapse && heroSection) {
-        // Când dropdown-ul se deschide
-        navbarCollapse.addEventListener('shown.bs.collapse', function () {
-          // Se calculează înălțimea collapse-ului
-          const collapseHeight = navbarCollapse.offsetHeight;
-          // Se adaugă margin-top-ul la hero section pentru a-l împinge în jos
-          heroSection.style.marginTop = collapseHeight + 'px';
+        // Când începe deschiderea dropdown-ului,
+        // folosim show.bs.collapse și un scurt setTimeout pentru a obține scrollHeight actualizat
+        navbarCollapse.addEventListener('show.bs.collapse', function () {
+          setTimeout(function(){
+            const collapseHeight = navbarCollapse.scrollHeight;
+            heroSection.style.marginTop = collapseHeight + 'px';
+          }, 10); // 10ms delay pentru reflow
         });
         
-        // Când dropdown-ul se închide, se resetează margin-top-ul
-        navbarCollapse.addEventListener('hidden.bs.collapse', function () {
+        // La începutul închiderii dropdown-ului, resetăm margin-top
+        navbarCollapse.addEventListener('hide.bs.collapse', function () {
           heroSection.style.marginTop = '0';
         });
       }
