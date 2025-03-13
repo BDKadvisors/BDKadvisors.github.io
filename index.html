@@ -4,31 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BDK Advisors - Acasă</title>
-
+  
   <!-- Meta description pentru SEO -->
   <meta name="description" content="BDK Advisors - Expert consultanță pentru accesarea și gestionarea fondurilor europene.">
-
+  
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
+  
   <!-- Google Fonts: Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+  
   <!-- Font Awesome pentru Iconițe (opțional) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pEg9lma0vnWheK3G+8zhe6E6SD/9iZpzc75p3ETpZfosP02sDmI0xnAU1usgjN4KPduVxOEyL/9nmVpW2fCe8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-pEg9lma0vnWheK3G+8zhe6E6SD/9iZpzc75p3ETpZfosP02sDmI0xnAU1usgjN4KPduVxOEyL/9nmVpW2fCe8g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
+  
   <!-- Stiluri personalizate -->
   <style>
     /* Setare font global */
     body {
       font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
     }
-
+    
     /* ------------------------ */
     /* Navbar & Footer */
     /* ------------------------ */
@@ -38,18 +38,17 @@
       transition: background 0.3s ease-in-out;
       position: relative;
     }
-
+    
     .navbar-nav .nav-link {
       color: white !important;
       transition: color 0.3s, text-shadow 0.3s;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
-
+    
     .navbar-nav .nav-link:hover {
       color: #ffcc00 !important;
     }
-
-    /* Stilul brandului pentru ecrane mari */
+    
     .navbar-brand {
       font-size: 26px;
       font-weight: bold;
@@ -58,16 +57,15 @@
       position: relative;
       z-index: 20;
     }
-
-    /* Navbar desktop */
+    
     .navbar {
       height: 70px;
       padding: 15px 0;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     }
-
+    
     /* ------------------------ */
-    /* Hero Section & Efect Fade-in */
+    /* Hero Section & Fade-in Animation */
     /* ------------------------ */
     .hero-section {
       position: relative;
@@ -79,9 +77,11 @@
       text-align: center;
       overflow: hidden;
       z-index: 1;
+      /* Inițial, margin-top-ul este 0 */
+      margin-top: 0;
       transition: margin-top 0.3s ease-in-out;
     }
-
+    
     .hero-section::before {
       content: "";
       position: absolute;
@@ -92,57 +92,66 @@
       background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(8px);
     }
-
+    
     .hero-section .container {
       position: relative;
       z-index: 1;
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
-
+    
     .hero-section .container.visible {
       opacity: 1;
     }
-
+    
     /* ------------------------ */
-    /* Stiluri Mobile/Tablet */
+    /* Stiluri pentru Navbar în Desktop */
+    /* ------------------------ */
+    .navbar-collapse {
+      /* Comportament implicit pentru ecrane largi */
+    }
+    
+    /* ------------------------ */
+    /* Stiluri pentru versiunile Mobile/Tablet */
     /* ------------------------ */
     @media (max-width: 768px) {
-      /* Bara de navigație fixă cu înălțime de 70px */
       .navbar {
-        height: 70px;
-        position: relative;
-        padding: 0 10px;
+        padding: 10px 0;
+        height: 70px; /* Menținem înălțimea */
       }
-
-      /* Brandul: centrat vertical și orizontal */
+      
+      /* Menținerea poziției brandului fix și centrat */
       .navbar-brand {
         position: absolute;
-        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 22px;
-        z-index: 10;
+        transform: translateX(-50%);
+        z-index: 30;
       }
-
-      /* Butonul toggler: aliniat vertical în colțul din dreapta */
+      
+      /* Poziționarea butonului toggler în dreapta */
       .navbar-toggler {
         position: absolute;
-        top: 50%;
         right: 20px;
-        transform: translateY(-50%);
-        z-index: 15;
+        z-index: 40;
       }
-
-      /* Dropdown-ul (collapse-ul) este poziționat absolut sub navbar,
-         astfel nu se mărește înălțimea barei și brandul rămâne fix */
+      
+      /* Dropdown-ul apare peste orice element */
       .navbar-collapse {
         position: absolute;
-        top: 70px;
+        top: 70px; /* imediat sub navbar */
         left: 0;
-        width: 100%;
+        right: 0;
+        z-index: 25;
         background: linear-gradient(90deg, #0073e6, #003d80);
-        z-index: 5;
+      }
+      
+      .navbar-nav {
+        flex-direction: column;
+      }
+      
+      .nav-item {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
@@ -150,9 +159,9 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
-    <div class="container position-relative">
+    <div class="container">
       <a class="navbar-brand" href="index.html">BDK Advisors</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -190,26 +199,36 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Script pentru a împinge secțiunea hero în jos când dropdown-ul este deschis -->
+  
+  <!-- Script pentru efectul de fade-in la încărcarea Hero Section și ajustarea margin-top când meniul dropdown e deschis -->
   <script>
-    (function() {
-      var navbarCollapse = document.getElementById('navbarNav');
-      var heroSection = document.querySelector('.hero-section');
+    window.addEventListener('load', function() {
+      // Fade-in pentru containerul din hero section
+      const heroContainer = document.querySelector('.hero-section .container');
+      if (heroContainer) {
+        heroContainer.classList.add('visible');
+      }
+      
+      // Obținem elementul collapse și hero section
+      const navbarCollapse = document.getElementById('navbarNav');
+      const heroSection = document.querySelector('.hero-section');
 
+      // Dacă sunt prezente (pe mobil, meniul este activ)
       if (navbarCollapse && heroSection) {
+        // Când dropdown-ul se deschide
         navbarCollapse.addEventListener('shown.bs.collapse', function () {
-          // Când dropdown-ul este deschis, obținem înălțimea meniului
-          var collapseHeight = navbarCollapse.offsetHeight;
-          // Aplicăm un margin-top secțiunii hero, astfel încât să fie împinsă în jos
+          // Se calculează înălțimea collapse-ului
+          const collapseHeight = navbarCollapse.offsetHeight;
+          // Se adaugă margin-top-ul la hero section pentru a-l împinge în jos
           heroSection.style.marginTop = collapseHeight + 'px';
         });
+        
+        // Când dropdown-ul se închide, se resetează margin-top-ul
         navbarCollapse.addEventListener('hidden.bs.collapse', function () {
-          // Când dropdown-ul este închis, eliminăm margin-top-ul
           heroSection.style.marginTop = '0';
         });
       }
-    })();
+    });
   </script>
 </body>
 </html>
