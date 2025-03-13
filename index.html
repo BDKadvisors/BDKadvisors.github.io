@@ -1,154 +1,208 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BDK Advisors - Acasă</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Navbar */
-        .navbar, footer {
-            background: linear-gradient(90deg, #0073e6, #003d80);
-            transition: background 0.3s ease-in-out;
-            position: relative;
-            z-index: 10;
-        }
-
-        .navbar-nav .nav-link {
-            color: white !important;
-            transition: color 0.3s, text-shadow 0.3s;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #ffcc00 !important;
-        }
-
-        .navbar-brand {
-            font-size: 26px;
-            font-weight: bold;
-            color: white !important;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            position: relative;
-            z-index: 15; /* Asigură că textul "BDK Advisors" este peste toate celelalte elemente */
-        }
-
-        /* Navbar large screens */
-        .navbar {
-            height: 70px;
-            padding: 15px 0;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Navbar small screens (mobile) */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 10px 0;
-                height: 70px; /* Menținem înălțimea constantă */
-            }
-
-            .navbar-brand {
-                font-size: 22px;
-                text-align: center;
-            }
-
-            .collapse .navbar-nav {
-                background: linear-gradient(90deg, #0073e6, #003d80);
-                padding: 10px;
-                border-radius: 5px;
-                width: 100%; /* Asigurăm că meniul ocupă întreaga lățime pe mobil */
-            }
-
-            .navbar-nav {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
-                padding: 0;
-            }
-
-            .navbar-nav .nav-item {
-                width: 100%; /* Fiecare element din meniu va ocupa 100% din lățimea */
-                text-align: center;
-            }
-
-            .navbar-toggler {
-                z-index: 15; /* Asigurăm că butonul dropdown este accesibil deasupra altor elemente */
-            }
-        }
-
-        /* Hero Section */
-        .hero-section {
-            position: relative;
-            background: url('images/consultanta.jpg') center/cover no-repeat;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(8px);
-        }
-
-        .hero-section .container {
-            position: relative;
-            z-index: 1;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BDK Advisors - Acasă</title>
+  
+  <!-- Meta description pentru SEO -->
+  <meta name="description" content="BDK Advisors - Expert consultanță pentru accesarea și gestionarea fondurilor europene.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome pentru Iconițe (opțional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pEg9lma0vnWheK3G+8zhe6E6SD/9iZpzc75p3ETpZfosP02sDmI0xnAU1usgjN4KPduVxOEyL/9nmVpW2fCe8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <!-- Stiluri personalizate -->
+  <style>
+    /* Setare font global */
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* ------------------------ */
+    /* Navbar & Footer */
+    /* ------------------------ */
+    .navbar,
+    footer {
+      background: linear-gradient(90deg, #0073e6, #003d80);
+      transition: background 0.3s ease-in-out;
+      position: relative;
+    }
+    
+    .navbar-nav .nav-link {
+      color: white !important;
+      transition: color 0.3s, text-shadow 0.3s;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    .navbar-nav .nav-link:hover {
+      color: #ffcc00 !important;
+    }
+    
+    .navbar-brand {
+      font-size: 26px;
+      font-weight: bold;
+      color: white !important;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 20;
+    }
+    
+    .navbar {
+      height: 70px;
+      padding: 15px 0;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* ------------------------ */
+    /* Hero Section & Fade-in Animation */
+    /* ------------------------ */
+    .hero-section {
+      position: relative;
+      background: url('images/consultanta.jpg') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+    }
+    
+    .hero-section .container {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    
+    .hero-section .container.visible {
+      opacity: 1;
+    }
+    
+    /* ------------------------ */
+    /* Stiluri pentru Navbar în Desktop */
+    /* ------------------------ */
+    .navbar-collapse {
+      /* Comportament implicit pentru ecrane largi */
+    }
+    
+    /* ------------------------ */
+    /* Stiluri pentru versiunile Mobile/Tablet */
+    /* ------------------------ */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 10px 0;
+        height: 70px; /* Menținem înălțimea */
+      }
+      
+      /* Menținerea poziției brandului fix și centrat */
+      .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 30;
+      }
+      
+      /* Poziționarea butonului toggler în dreapta */
+      .navbar-toggler {
+        position: absolute;
+        right: 20px;
+        z-index: 40;
+      }
+      
+      /* Dropdown-ul apare peste orice element */
+      .navbar-collapse {
+        position: absolute;
+        top: 70px; /* imediat sub navbar */
+        left: 0;
+        right: 0;
+        z-index: 25;
+        background: linear-gradient(90deg, #0073e6, #003d80);
+      }
+      
+      .navbar-nav {
+        flex-direction: column;
+      }
+      
+      .nav-item {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container position-relative">
-            <a class="navbar-brand" href="index.html">BDK Advisors</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
-                    <li class="nav-item"><a class="nav-link" href="despre.html">Despre noi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="servicii.html">Servicii</a></li>
-                    <li class="nav-item"><a class="nav-link" href="finantari.html">Finanțări</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">BDK Advisors</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
+          <li class="nav-item"><a class="nav-link" href="despre.html">Despre noi</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicii.html">Servicii</a></li>
+          <li class="nav-item"><a class="nav-link" href="finantari.html">Finanțări</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section text-white py-5">
-        <div class="container">
-            <h1>Bine ați venit la BDK Advisors</h1>
-            <p class="lead">De la idee la succes, împreună.</p>
-            <a href="servicii.html" class="btn btn-primary">Descoperă Serviciile Noastre</a>
-        </div>
-    </header>
+  <!-- Hero Section -->
+  <header class="hero-section text-white py-5">
+    <div class="container">
+      <h1>Bine ați venit la BDK Advisors</h1>
+      <p class="lead">De la idee la succes, împreună.</p>
+      <a href="servicii.html" class="btn btn-primary">Descoperă Serviciile Noastre</a>
+    </div>
+  </header>
 
-    <!-- Secțiune Prezentare -->
-    <section class="container my-5 text-center">
-        <h2>Consultanță pentru Fonduri Europene</h2>
-        <p>Oferim expertiză pentru accesarea și gestionarea fondurilor europene, asigurând conformitatea și succesul proiectelor.</p>
-    </section>
+  <!-- Secțiune Prezentare -->
+  <section class="container my-5 text-center">
+    <h2>Consultanță pentru Fonduri Europene</h2>
+    <p>Oferim expertiză pentru accesarea și gestionarea fondurilor europene, asigurând conformitatea și succesul proiectelor.</p>
+  </section>
 
-    <!-- Footer -->
-    <footer class="text-white text-center py-3">
-        <p>&copy; 2025 BDK Advisors. Toate drepturile rezervate.</p>
-    </footer>
+  <!-- Footer -->
+  <footer class="text-white text-center py-3">
+    <p>&copy; 2025 BDK Advisors. Toate drepturile rezervate.</p>
+  </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Script pentru efectul de fade-in la încărcarea Hero Section -->
+  <script>
+    window.addEventListener('load', function() {
+      const heroContainer = document.querySelector('.hero-section .container');
+      if (heroContainer) {
+        heroContainer.classList.add('visible');
+      }
+    });
+  </script>
 </body>
 </html>
