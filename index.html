@@ -26,11 +26,15 @@
             font-weight: bold;
             color: white !important;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            position: relative; /* Lăsăm poziția relativă pentru a evita conflictele */
         }
         .navbar {
             height: 70px;
             padding: 15px 0;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .navbar-toggler {
+            z-index: 15; /* Asigurăm că butonul dropdown este accesibil deasupra altor elemente */
         }
         @media (max-width: 768px) {
             .navbar {
@@ -38,9 +42,10 @@
             }
             .navbar-brand {
                 font-size: 22px;
+                text-align: center; /* Textul este centrat în mod elegant pe ecrane mici */
             }
             .collapse .navbar-nav {
-                background: linear-gradient(90deg, #0073e6, #003d80); /* Fundal pentru meniul mobil */
+                background: linear-gradient(90deg, #0073e6, #003d80);
                 padding: 10px;
                 border-radius: 5px;
             }
@@ -75,7 +80,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
-        <div class="container">
+        <div class="container position-relative">
             <a class="navbar-brand" href="index.html">BDK Advisors</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
