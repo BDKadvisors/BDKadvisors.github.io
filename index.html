@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BDK Advisors - Acasă</title>
   
-  <!-- Meta description pentru SEO -->
+  <!-- Meta description pour SEO -->
   <meta name="description" content="BDK Advisors - Expert consultanță pentru accesarea și gestionarea fondurilor europene.">
   
   <!-- Favicon -->
@@ -47,7 +47,7 @@
       color: #ffcc00 !important;
     }
     
-    /* Mărimea și aspectul brandului */
+    /* Mărimea și aspectul brandului pentru ecrane mari */
     .navbar-brand {
       font-size: 26px;
       font-weight: bold;
@@ -103,7 +103,7 @@
     /* ------------------------ */
     /* Stiluri pentru Desktop (implicite) */
     /* ------------------------ */
-    /* Nu modificăm comportamentul pe ecrane mari */
+    /* Comportament implicit pentru ecrane largi */
     
     /* ------------------------ */
     /* Stiluri Mobile/Tablet: Meniu Dropdown care împinge conținutul în jos */
@@ -116,12 +116,12 @@
           position: relative;
       }
       
-      /* Fixăm brandul în partea superioară astfel încât nu se mișcă odată cu extinderea meniului */
+      /* Fixăm și centrăm vertical brandul */
       .navbar-brand {
           position: absolute;
-          top: 0;
+          top: 50%;
           left: 50%;
-          transform: translateX(-50%);
+          transform: translate(-50%, -50%);
           z-index: 10;
           font-size: 22px;
       }
@@ -129,8 +129,9 @@
       /* Poziționăm butonul toggler în colțul din dreapta */
       .navbar-toggler {
           position: absolute;
-          top: 0;
+          top: 50%;
           right: 20px;
+          transform: translateY(-50%);
           z-index: 15;
       }
       
