@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .navbar, footer {
-            background: linear-gradient(90deg, #0056b3, #003d80);
+            background: linear-gradient(90deg, #0073e6, #003d80);
             transition: background 0.3s ease-in-out;
+            position: relative;
+            z-index: 10;
         }
         .navbar-nav .nav-link {
             color: white !important;
@@ -37,6 +39,11 @@
             .navbar-brand {
                 font-size: 22px;
             }
+            .collapse .navbar-nav {
+                background: linear-gradient(90deg, #0073e6, #003d80); /* Fundal pentru meniul mobil */
+                padding: 10px;
+                border-radius: 5px;
+            }
         }
         .hero-section {
             position: relative;
@@ -47,6 +54,7 @@
             justify-content: center;
             text-align: center;
             overflow: hidden;
+            z-index: 1;
         }
         .hero-section::before {
             content: "";
@@ -69,7 +77,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html">BDK Advisors</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
