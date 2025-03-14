@@ -9,6 +9,7 @@
     <title>Startup 2025 - BDK Advisors</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -120,17 +121,6 @@
             transform: scale(1.05); /* Mărește ușor butonul la hover */
         }
 
-        /* Adaugă o animație subtilă pentru butoane */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .btn-primary {
-            animation: pulse 2s infinite; /* Animație continuă */
-        }
-
         /* Footer */
         .footer {
             background: rgba(0, 51, 102, 0.9); /* Albastru închis */
@@ -145,18 +135,46 @@
         .why-us-item {
             background: rgba(0, 51, 102, 0.9); /* Albastru închis */
             color: white;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease-in-out;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .benefit-item:hover,
         .process-item:hover,
         .why-us-item:hover {
-            transform: scale(1.05);
-            background: rgba(255, 102, 0, 0.9); /* Portocaliu */
+            transform: translateY(-10px); /* Efect de ridicare la hover */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+            background: #28a745; /* Verde deschis la hover */
+        }
+
+        .benefit-item h4,
+        .process-item h4,
+        .why-us-item h4 {
+            margin-top: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .benefit-item p,
+        .process-item p,
+        .why-us-item p {
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .benefit-item .btn-outline-light {
+            margin-top: 15px;
+            border: 2px solid white;
+            color: white;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .benefit-item .btn-outline-light:hover {
+            background-color: white;
+            color: #ff6600; /* Portocaliu */
         }
 
         /* Formulare */
@@ -237,24 +255,35 @@
     <section id="benefits" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">Beneficiile Finanțării</h2>
-            <p class="text-center">Prin programul <strong>Startup 2025</strong>, ai acces la finanțare nerambursabilă pentru a-ți transforma ideea într-o afacere de succes.</p>
+            <p class="text-center mb-5">Prin programul <strong>Startup 2025</strong>, ai acces la finanțare nerambursabilă și resurse esențiale pentru a-ți transforma ideea într-o afacere de succes.</p>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="benefit-item">
+                <!-- Beneficiu 1: Fonduri Nerambursabile -->
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-item text-center p-4">
+                        <i class="fas fa-coins fa-3x mb-3" style="color: #ff6600;"></i> <!-- Iconiță -->
                         <h4>Fonduri Nerambursabile</h4>
-                        <p>Accesează finanțare fără obligația de rambursare, pentru a-ți susține investițiile esențiale.</p>
+                        <p>Accesează finanțare fără obligația de rambursare, pentru a-ți susține investițiile esențiale. Fondurile sunt acordate prin programe europene și guvernamentale.</p>
+                        <a href="#eligibility" class="btn btn-outline-light">Află mai multe</a> <!-- Buton suplimentar -->
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="benefit-item">
+
+                <!-- Beneficiu 2: Consultanță Profesională -->
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-item text-center p-4">
+                        <i class="fas fa-users fa-3x mb-3" style="color: #ff6600;"></i> <!-- Iconiță -->
                         <h4>Consultanță Profesională</h4>
-                        <p>Beneficiezi de suport specializat din partea experților BDK Advisors, de la aplicare până la implementare.</p>
+                        <p>Beneficiezi de suport specializat din partea experților BDK Advisors, de la aplicare până la implementare. Te ajutăm să navighezi prin procesul de obținere a fondurilor.</p>
+                        <a href="#contact" class="btn btn-outline-light">Contactează-ne</a> <!-- Buton suplimentar -->
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="benefit-item">
+
+                <!-- Beneficiu 3: Dezvoltare Accelerată -->
+                <div class="col-md-4 mb-4">
+                    <div class="benefit-item text-center p-4">
+                        <i class="fas fa-rocket fa-3x mb-3" style="color: #ff6600;"></i> <!-- Iconiță -->
                         <h4>Dezvoltare Accelerată</h4>
-                        <p>Resursele financiare îți permit să crești rapid, să angajezi personal și să îți dezvolți afacerea eficient.</p>
+                        <p>Resursele financiare îți permit să crești rapid, să angajezi personal, să investești în tehnologie și să îți dezvolți afacerea într-un mod eficient și sustenabil.</p>
+                        <a href="#process" class="btn btn-outline-light">Vezi procesul</a> <!-- Buton suplimentar -->
                     </div>
                 </div>
             </div>
@@ -267,20 +296,28 @@
             <h2 class="text-center mb-4">Procesul de Aplicare</h2>
             <p class="text-center">Începe acum să aplici pentru programul <strong>Startup 2025</strong> și transformă-ți ideea în realitate.</p>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="process-item">
+                <!-- Pasul 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="process-item text-center p-4">
+                        <i class="fas fa-file-alt fa-3x mb-3" style="color: #ff6600;"></i> <!-- Iconiță -->
                         <h4>Pasul 1</h4>
                         <p>Completează formularul de aplicare cu informațiile despre afacerea ta.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="process-item">
+
+                <!-- Pasul 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="process-item text-center p-4">
+                        <i class="fas fa-handshake fa-3x mb-3" style="color: #ff6600;"></i> <!-- Iconiță -->
                         <h4>Pasul 2</h4>
                         <p>Primești consultanță și asistență pentru pregătirea documentației necesare.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="process-item">
+
+                <!-- Pasul 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="process-item text-center p-4">
+                        <i class="fas fa-check-circle fa-3x mb-3" style="color: #ff6600;"></i> <!-- Iconiță -->
                         <h4>Pasul 3</h4>
                         <p>Depunerea cererii și evaluarea acesteia de către autoritățile competente.</p>
                     </div>
@@ -295,20 +332,28 @@
             <h2 class="text-center mb-4">De ce să alegi BDK Advisors?</h2>
             <p class="text-center">Suntem partenerul tău de încredere în drumul către succes.</p>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="why-us-item">
+                <!-- Experiență dovedită -->
+                <div class="col-md-4 mb-4">
+                    <div class="why-us-item text-center p-4">
+                        <i class="fas fa-award fa-3x mb-3" style="color: #ff6600;"></i> <!-- Iconiță -->
                         <h4>Experiență dovedită</h4>
                         <p>Avem o echipă de specialiști cu experiență în accesarea fondurilor europene.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="why-us-item">
+
+                <!-- Suport complet -->
+                <div class="col-md-4 mb-4">
+                    <div class="why-us-item text-center p-4">
+                        <i class="fas fa-headset fa-3x mb-3" style="color: #ff6600;"></i> <!-- Iconiță -->
                         <h4>Suport complet</h4>
                         <p>Te ghidăm în fiecare etapă a procesului, asigurându-ne că îndeplinești toate cerințele.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="why-us-item">
+
+                <!-- Rata mare de succes -->
+                <div class="col-md-4 mb-4">
+                    <div class="why-us-item text-center p-4">
+                        <i class="fas fa-chart-line fa-3x mb-3" style="color: #ff6600;"></i> <!-- Iconiță -->
                         <h4>Rata mare de succes</h4>
                         <p>Clienții noștri beneficiază de o rată de succes remarcabilă în obținerea finanțării.</p>
                     </div>
