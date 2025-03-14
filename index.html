@@ -106,26 +106,42 @@
             z-index: 2;
             max-width: 800px;
             padding: 0 20px;
+            text-align: left; /* Aliniere la stânga */
+        }
+
+        /* Toate elementele sunt invizibile la început */
+        .hero-title,
+        .hero-subtitle,
+        .hero-description,
+        .hero-buttons {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards; /* Efect de fade-in */
         }
 
         .hero-title {
             font-size: 4.5em; /* Titlu mai mare */
             font-weight: bold;
             margin-bottom: 20px;
-            animation: fadeInDown 1s ease-out; /* Animație pentru titlu */
+            animation-delay: 0s; /* Titlul apare primul */
         }
 
         .hero-subtitle {
             font-size: 1.5em; /* Subtitlu mai descriptiv */
+            margin-bottom: 20px;
+            animation-delay: 0.5s; /* Subtitlul apare după 0.5 secunde */
+        }
+
+        .hero-description {
+            font-size: 1.1em; /* Descriere mai mică */
             margin-bottom: 40px;
-            animation: fadeInUp 1s ease-out 0.5s; /* Animație pentru subtitlu */
+            animation-delay: 1s; /* Descrierea apare după 1 secundă */
         }
 
         .hero-buttons {
             display: flex;
             gap: 15px; /* Spațiu între butoane */
-            justify-content: center;
-            animation: fadeInUp 1s ease-out 1s; /* Animație pentru butoane */
+            justify-content: flex-start; /* Aliniere la stânga */
+            animation-delay: 1.5s; /* Butoanele apar după 1.5 secunde */
         }
 
         .btn-hero {
@@ -140,26 +156,13 @@
             transform: translateY(-5px); /* Efect de ridicare la hover */
         }
 
-        /* Animații */
-        @keyframes fadeInDown {
+        /* Animație fade-in */
+        @keyframes fadeIn {
             0% {
                 opacity: 0;
-                transform: translateY(-50px);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
 
@@ -171,6 +174,10 @@
 
             .hero-subtitle {
                 font-size: 1.2em; /* Subtitlu mai mic pe dispozitive mobile */
+            }
+
+            .hero-description {
+                font-size: 1em; /* Descriere mai mică pe dispozitive mobile */
             }
 
             .hero-buttons {
@@ -261,7 +268,7 @@
             bottom: 20px;
             right: 20px;
             z-index: 1000;
-            background-color: #ff6600; /* Portocaliu */
+            background-color: #007BFF; /* Albastru deschis */
             color: white;
             border: none;
             border-radius: 50%;
@@ -274,7 +281,7 @@
         }
 
         #scrollToTopBtn:hover {
-            background-color: #e65c00; /* Portocaliu mai închis la hover */
+            background-color: #0056b3; /* Albastru mai închis la hover */
             transform: scale(1.1); /* Mărește ușor butonul la hover */
         }
     </style>
@@ -300,17 +307,20 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">Startup 2025</h1>
-            <p class="hero-subtitle">Transformă-ți ideea într-o afacere de succes cu finanțare nerambursabilă și consultanță specializată.</p>
-            <div class="hero-buttons">
-                <a href="#eligibility" class="btn btn-primary btn-hero">Verifică eligibilitatea</a>
-                <a href="#contact" class="btn btn-outline-light btn-hero">Contactează-ne</a>
-            </div>
+<!-- Hero Section -->
+<header class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Start-Up Nation IV <span style="color: #ff6600;">2025</span></h1>
+        <p class="hero-subtitle" style="font-size: 1.8em; font-weight: 300; color: #ff6600;">Powered by <strong style="font-weight: 600;">BDK Advisors</strong> - De la idee la succes, împreună.</p>
+        <p class="hero-description" style="font-size: 1.1em; line-height: 1.8; max-width: 600px;">
+            După primele ediții de succes, prin care au fost finanțate <strong style="color: #ff6600;">30.000 de firme noi</strong>, Programul Start-up Nation IV 2025 își propune să te sprijine în primii pași în afaceri prin cursuri de antreprenoriat gratuite și prin finanțare nerambursabilă de <strong style="color: #ff6600;">€50.000</strong>.
+        </p>
+        <div class="hero-buttons">
+            <a href="#eligibility" class="btn btn-primary btn-hero">Verifică eligibilitatea</a>
+            <a href="#contact" class="btn btn-outline-light btn-hero">Contactează-ne</a>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- Secțiunea Beneficii -->
     <section id="benefits" class="py-5">
@@ -475,7 +485,7 @@
     </footer>
 
     <!-- Buton Scroll to Top -->
-    <button id="scrollToTopBtn" title="Go to top">↑</button>
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
     <!-- Script pentru efectul de transparență la scroll -->
     <script>
