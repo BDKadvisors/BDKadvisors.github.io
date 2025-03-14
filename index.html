@@ -1,233 +1,271 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BDK Advisors - Acasă</title>
-  
-  <!-- Meta description pentru SEO -->
-  <meta name="description" content="BDK Advisors - Expert consultanță pentru accesarea și gestionarea fondurilor europene.">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  
-  <!-- Google Fonts: Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome pentru Iconițe (opțional) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-        integrity="sha512-pEg9lma0vnWheK3G+8zhe6E6SD/9iZpzc75p3ETpZfosP02sDmI0xnAU1usgjN4KPduVxOEyL/9nmVpW2fCe8g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  
-  <!-- Stiluri personalizate -->
-  <style>
-    /* Setare font global */
-    body {
-      font-family: 'Montserrat', sans-serif;
-    }
-    
-    /* ------------------------ */
-    /* Navbar & Footer */
-    /* ------------------------ */
-    .navbar,
-    footer {
-      background: linear-gradient(90deg, #0073e6, #003d80);
-      transition: background 0.3s ease-in-out;
-      position: relative;
-    }
-    
-    .navbar-nav .nav-link {
-      color: white !important;
-      transition: color 0.3s, text-shadow 0.3s;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    }
-    
-    .navbar-nav .nav-link:hover {
-      color: #ffcc00 !important;
-    }
-    
-    .navbar-brand {
-      font-size: 26px;
-      font-weight: bold;
-      color: white !important;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-      position: relative;
-      z-index: 20;
-    }
-    
-    .navbar {
-      height: 70px;
-      padding: 15px 0;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* ------------------------ */
-    /* Hero Section & Fade-in Animation */
-    /* ------------------------ */
-    .hero-section {
-      position: relative;
-      background: url('images/consultanta.jpg') center/cover no-repeat;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      z-index: 1;
-      margin-top: 0;
-      transition: margin-top 0.3s ease-in-out;
-    }
-    
-    .hero-section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
-    }
-    
-    .hero-section .container {
-      position: relative;
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    
-    .hero-section .container.visible {
-      opacity: 1;
-    }
-    
-    /* ------------------------ */
-    /* Stiluri pentru Navbar în Desktop */
-    /* ------------------------ */
-    .navbar-collapse {
-      /* Comportament implicit pentru ecrane largi */
-    }
-    
-    /* ------------------------ */
-    /* Stiluri pentru versiunile Mobile/Tablet */
-    /* ------------------------ */
-    @media (max-width: 768px) {
-      .navbar {
-        padding: 10px 0;
-        height: 70px; /* Menținem înălțimea */
-      }
-      
-      /* Menținerea poziției brandului fix și centrat */
-      .navbar-brand {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 30;
-      }
-      
-      /* Poziționarea butonului toggler în dreapta */
-      .navbar-toggler {
-        position: absolute;
-        right: 20px;
-        z-index: 40;
-      }
-      
-      /* Dropdown-ul apare peste orice element */
-      .navbar-collapse {
-        position: absolute;
-        top: 70px; /* imediat sub navbar */
-        left: 0;
-        right: 0;
-        z-index: 25;
-        background: linear-gradient(90deg, #0073e6, #003d80);
-      }
-      
-      .navbar-nav {
-        flex-direction: column;
-      }
-      
-      .nav-item {
-        width: 100%;
-        text-align: center;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Obține finanțare pentru afacerea ta prin programul Startup 2025. Consultanță specializată și acces rapid la fonduri europene.">
+    <meta name="keywords" content="Startup 2025, finanțare, fonduri europene, BDK Advisors, consultanță startup">
+    <meta name="author" content="BDK Advisors">
+    <title>Startup 2025 - BDK Advisors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(0, 51, 102, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 10px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .hero-section {
+            background: url('images/startup-bg.jpg') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 102, 0, 0.6);
+            mix-blend-mode: multiply;
+            filter: brightness(25%) blur(12px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-primary {
+            background-color: #ff6600;
+            border: none;
+        }
+
+        .footer {
+            background: rgba(0, 51, 102, 0.9);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .benefit-item {
+            background: rgba(0, 51, 102, 0.9);
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .benefit-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 102, 0, 0.9);
+        }
+
+        .process-item,
+        .why-us-item {
+            background: rgba(0, 51, 102, 0.9);
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .process-item:hover,
+        .why-us-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 102, 0, 0.9);
+        }
+
+        .form-control {
+            resize: none;
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">BDK Advisors</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Acasă</a></li>
-          <li class="nav-item"><a class="nav-link" href="despre.html">Despre noi</a></li>
-          <li class="nav-item"><a class="nav-link" href="servicii.html">Servicii</a></li>
-          <li class="nav-item"><a class="nav-link" href="finantari.html">Finanțări</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <header class="hero-section text-white py-5">
-    <div class="container">
-      <h1>Bine ați venit la BDK Advisors</h1>
-      <p class="lead">De la idee la succes, împreună.</p>
-      <a href="servicii.html" class="btn btn-primary">Descoperă Serviciile Noastre</a>
-    </div>
-  </header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="#">BDK Advisors</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#benefits">Beneficii</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">Proces</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why-us">De ce noi?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#eligibility">Eligibilitate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Startup 2025</h1>
+            <p>Obține finanțare pentru afacerea ta!</p>
+            <a href="#eligibility" class="btn btn-primary">Verifică eligibilitatea</a>
+        </div>
+    </header>
 
-  <!-- Secțiune Prezentare -->
-  <section class="container my-5 text-center">
-    <h2>Consultanță pentru Fonduri Europene</h2>
-    <p>Oferim expertiză pentru accesarea și gestionarea fondurilor europene, asigurând conformitatea și succesul proiectelor.</p>
-  </section>
+    <section id="benefits" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Beneficiile Finanțării</h2>
+            <p class="text-center">Prin programul <strong>Startup 2025</strong>, ai acces la finanțare nerambursabilă pentru a-ți transforma ideea într-o afacere de succes.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="benefit-item">
+                        <h4>Fonduri Nerambursabile</h4>
+                        <p>Accesează finanțare fără obligația de rambursare, pentru a-ți susține investițiile esențiale.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-item">
+                        <h4>Consultanță Profesională</h4>
+                        <p>Beneficiezi de suport specializat din partea experților BDK Advisors, de la aplicare până la implementare.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-item">
+                        <h4>Dezvoltare Accelerată</h4>
+                        <p>Resursele financiare îți permit să crești rapid, să angajezi personal și să îți dezvolți afacerea eficient.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="text-white text-center py-3">
-    <p>&copy; 2025 BDK Advisors. Toate drepturile rezervate.</p>
-  </footer>
+    <section id="process" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Procesul de Aplicare</h2>
+            <p class="text-center">Începe acum să aplici pentru programul <strong>Startup 2025</strong> și transformă-ți ideea în realitate.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="process-item">
+                        <h4>Pasul 1</h4>
+                        <p>Completează formularul de aplicare cu informațiile despre afacerea ta.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="process-item">
+                        <h4>Pasul 2</h4>
+                        <p>Primești consultanță și asistență pentru pregătirea documentației necesare.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="process-item">
+                        <h4>Pasul 3</h4>
+                        <p>Depunerea cererii și evaluarea acesteia de către autoritățile competente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Script pentru fade-in la încărcarea Hero Section și ajustarea margin-top concomitent cu animația dropdown -->
-  <script>
-    window.addEventListener('load', function() {
-      // Fade-in pentru containerul din secțiunea hero
-      const heroContainer = document.querySelector('.hero-section .container');
-      if (heroContainer) {
-        heroContainer.classList.add('visible');
-      }
-      
-      // Obținem elementele collapse și hero section
-      const navbarCollapse = document.getElementById('navbarNav');
-      const heroSection = document.querySelector('.hero-section');
+    <section id="why-us" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">De ce să alegi BDK Advisors?</h2>
+            <p class="text-center">Suntem partenerul tău de încredere în drumul către succes.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="why-us-item">
+                        <h4>Experiență dovedită</h4>
+                        <p>Avem o echipă de specialiști cu experiență în accesarea fondurilor europene.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-us-item">
+                        <h4>Suport complet</h4>
+                        <p>Te ghidăm în fiecare etapă a procesului, asigurându-ne că îndeplinești toate cerințele.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-us-item">
+                        <h4>Rata mare de succes</h4>
+                        <p>Clienții noștri beneficiază de o rată de succes remarcabilă în obținerea finanțării.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      if (navbarCollapse && heroSection) {
-        // Când începe deschiderea dropdown-ului,
-        // folosim show.bs.collapse și un scurt setTimeout pentru a obține scrollHeight actualizat
-        navbarCollapse.addEventListener('show.bs.collapse', function () {
-          setTimeout(function(){
-            const collapseHeight = navbarCollapse.scrollHeight;
-            heroSection.style.marginTop = collapseHeight + 'px';
-          }, 10); // 10ms delay pentru reflow
-        });
-        
-        // La începutul închiderii dropdown-ului, resetăm margin-top
-        navbarCollapse.addEventListener('hide.bs.collapse', function () {
-          heroSection.style.marginTop = '0';
-        });
-      }
-    });
-  </script>
+    <section id="eligibility" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Verifică Eligibilitatea</h2>
+            <p class="text-center">Completează formularul pentru a verifica dacă afacerea ta este eligibilă pentru programul Startup 2025.</p>
+            <form>
+                <div class="mb-3">
+                    <label for="company-name" class="form-label">Numele companiei</label>
+                    <input type="text" class="form-control" id="company-name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="industry" class="form-label">Domeniul de activitate</label>
+                    <input type="text" class="form-control" id="industry" required>
+                </div>
+                <div class="mb-3">
+                    <label for="employees" class="form-label">Număr de angajați</label>
+                    <input type="number" class="form-control" id="employees" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Verifică eligibilitatea</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Contactează-ne</h2>
+            <p class="text-center">Completează formularul pentru orice întrebări sau pentru a solicita mai multe informații.</p>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Numele tău</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mesaj</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Trimite mesaj</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 BDK Advisors. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
