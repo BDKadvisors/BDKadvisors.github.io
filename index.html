@@ -119,20 +119,24 @@
         }
 
         .hero-title {
-            font-size: 4.5em;
-            font-weight: bold;
+            font-size: 4.5em; /* Dimensiunea titlului pe desktop */
+            font-weight: bold; /* Text bolduit */
             margin-bottom: 20px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Umbră pentru titlu */
         }
 
         .hero-subtitle {
-            font-size: 1.5em;
+            font-size: 1.91em; /* Dimensiunea subtitlului pe desktop */
+            font-weight: bold; /* Text bolduit */
+            color: #ff6600;
             margin-bottom: 20px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Umbră pentru subtitlu */
         }
 
         .hero-description {
-            font-size: 1.1em;
+            font-size: 1.2em; /* Dimensiunea descrierii pe desktop */
+            line-height: 1.5;
+            max-width: 900px;
             margin-bottom: 40px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Umbră pentru descriere */
         }
@@ -165,11 +169,11 @@
             }
         }
 
-        /* Responsivitate */
+        /* Responsivitate pentru dispozitive mobile */
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 3em; /* Titlu mai mic pe dispozitive mobile */
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Umbră ajustată pentru mobile */
+                font-size: 2.7em; /* Titlu mai mic pe dispozitive mobile */
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Umbră ajustată pentru mobile */
             }
 
             .hero-subtitle {
@@ -178,7 +182,7 @@
             }
 
             .hero-description {
-                font-size: 1em; /* Descriere mai mică pe dispozitive mobile */
+                font-size: 0.8em; /* Descriere mai mică pe dispozitive mobile */
                 text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Umbră ajustată pentru mobile */
             }
 
@@ -309,9 +313,9 @@
     <header class="hero-section">
         <div class="hero-content">
             <h1 class="hero-title">Start-Up Nation 2025</h1>
-            <p class="hero-subtitle" style="font-size: 1.91em; font-weight: 300; color: #ff6600;">Powered by <strong style="font-weight: 1000;">BDK Advisors</strong> - De la idee la succes, împreună.</p>
-            <p class="hero-description" style="font-size: 1.2em; line-height: 1.5; max-width: 950px;">
-                După succesul primelor ediții, care au finanțat peste 30.000 de anteprenori, Programul Start-up Nation 2025 vine cu noi oportunități pentru antreprenorii la inceput de drum. <br>Prin acest program vei beneficia de cursuri gratuite de antreprenoriat și de o finanțare nerambursabilă de până la €50.000, pentru a-ți transforma ideile în afaceri de succes.
+            <p class="hero-subtitle">Powered by <strong>BDK Advisors</strong> - De la idee la succes, împreună.</p>
+            <p class="hero-description">
+                După succesul primelor ediții, care au sprijinit finanțarea a peste 30.000 de afaceri noi, Programul Start-up Nation 2025 vine cu noi oportunități pentru antreprenorii la inceput de drum. <br>Prin acest program vei beneficia de cursuri gratuite de antreprenoriat și de o finanțare nerambursabilă de până la €50.000, pentru a-ți transforma ideile în afaceri de succes.
             </p>
             <div class="hero-buttons">
                 <a href="#eligibility" class="btn btn-primary btn-hero">Verifică eligibilitatea</a>
