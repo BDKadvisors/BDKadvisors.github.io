@@ -81,7 +81,7 @@
 
         /* Hero Section */
         .hero-section {
-            background: url('images/startup-bg.jpg') center/cover no-repeat;
+            background: url('images/123.jpg') center/cover no-repeat;
             height: 700px;
             display: flex;
             align-items: center;
@@ -104,7 +104,7 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 1000px;
             padding: 0 20px;
             text-align: left; /* Aliniere la stânga */
         }
@@ -115,33 +115,29 @@
         .hero-description,
         .hero-buttons {
             opacity: 0;
-            animation: fadeIn 1.5s ease-out forwards; /* Efect de fade-in */
+            animation: fadeIn 1s ease-out 1s forwards; /* Efect de fade-in după 1 secundă */
         }
 
         .hero-title {
             font-size: 4.5em; /* Titlu mai mare */
             font-weight: bold;
             margin-bottom: 20px;
-            animation-delay: 0s; /* Titlul apare primul */
         }
 
         .hero-subtitle {
             font-size: 1.5em; /* Subtitlu mai descriptiv */
             margin-bottom: 20px;
-            animation-delay: 0.5s; /* Subtitlul apare după 0.5 secunde */
         }
 
         .hero-description {
             font-size: 1.1em; /* Descriere mai mică */
             margin-bottom: 40px;
-            animation-delay: 1s; /* Descrierea apare după 1 secundă */
         }
 
         .hero-buttons {
             display: flex;
             gap: 15px; /* Spațiu între butoane */
             justify-content: flex-start; /* Aliniere la stânga */
-            animation-delay: 1.5s; /* Butoanele apar după 1.5 secunde */
         }
 
         .btn-hero {
@@ -268,21 +264,17 @@
             bottom: 20px;
             right: 20px;
             z-index: 1000;
-            background-color: #007BFF; /* Albastru deschis */
-            color: white;
+            color: #007BFF; /* Albastru deschis */
+            background-color: transparent; /* Elimină fundalul */
             border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.5em;
             cursor: pointer;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 2em; /* Mărește dimensiunea săgeții */
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         #scrollToTopBtn:hover {
-            background-color: #0056b3; /* Albastru mai închis la hover */
-            transform: scale(1.1); /* Mărește ușor butonul la hover */
+            color: #0056b3; /* Albastru mai închis la hover */
+            transform: scale(1.1); /* Mărește ușor săgeata la hover */
         }
     </style>
 </head>
@@ -310,11 +302,10 @@
 <!-- Hero Section -->
 <header class="hero-section">
     <div class="hero-content">
-        <h1 class="hero-title">Start-Up Nation IV <span style="color: #ff6600;">2025</span></h1>
-        <p class="hero-subtitle" style="font-size: 1.8em; font-weight: 300; color: #ff6600;">Powered by <strong style="font-weight: 600;">BDK Advisors</strong> - De la idee la succes, împreună.</p>
-        <p class="hero-description" style="font-size: 1.1em; line-height: 1.8; max-width: 600px;">
-            După primele ediții de succes, prin care au fost finanțate <strong style="color: #ff6600;">30.000 de firme noi</strong>, Programul Start-up Nation IV 2025 își propune să te sprijine în primii pași în afaceri prin cursuri de antreprenoriat gratuite și prin finanțare nerambursabilă de <strong style="color: #ff6600;">€50.000</strong>.
-        </p>
+        <h1 class="hero-title">Start-Up Nation 2025</h1>
+        <p class="hero-subtitle" style="font-size: 1.91em; font-weight: 300; color: #ff6600;">Powered by <strong style="font-weight: 1000;">BDK Advisors</strong> - De la idee la succes, împreună.</p>
+        <p class="hero-description" style="font-size: 1.2em; line-height: 1.5; max-width: 900px;">
+            După succesul primelor ediții, care au sprijinit finanțarea a peste 30.000 de afaceri noi, Programul Start-up Nation 2025 vine cu noi oportunități pentru antreprenorii la inceput de drum. <br>Prin acest program vei beneficia de cursuri gratuite de antreprenoriat și de o finanțare nerambursabilă de până la €50.000, pentru a-ți transforma ideile în afaceri de succes.
         <div class="hero-buttons">
             <a href="#eligibility" class="btn btn-primary btn-hero">Verifică eligibilitatea</a>
             <a href="#contact" class="btn btn-outline-light btn-hero">Contactează-ne</a>
