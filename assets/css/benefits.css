@@ -1,0 +1,34 @@
+/* Secțiunea Beneficii */
+.benefit-item {
+    background: rgba(0, 51, 102, 0.9);
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.benefit-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    background: #28a745;
+}
+.benefit-item h4 {
+    margin-top: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.benefit-item p {
+    font-size: 1em;
+    margin-top: 10px;
+}
+.benefit-item .btn-outline-light {
+    margin-top: 15px;
+    border: 2px solid white;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.benefit-item .btn-outline-light:hover {
+    background-color: white;
+    color: #ff6600;
+}
